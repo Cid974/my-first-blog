@@ -8,19 +8,12 @@
         <a href="">Gato's blog</a>
       </h1>
     </div>
-    <div>
-      <p>published 2017/03/05 13:51</p>
-      <h2>
-        <a href="">Premier article</a>
-      </h2>
-      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-    </div>
-    <div>
-      <p>published 2017/03/05 14:00</p>
-      <h2>
-        <a href="">Deuxieme article</a>
-      </h2>
-      <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-    </div>
+    {% for post in posts%}
+      <div>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <p>published date : {{ post.published_date }}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
